@@ -1,0 +1,85 @@
+
+    header>div{
+       
+        display: flex;
+        align-items: center;
+
+    }
+    header{
+        display: flex;
+        justify-content: space-between;
+        padding-left: 20px;
+    }
+
+    /* #search_results>div{
+        border: 2px solid black;
+    } */
+    #icon{
+        height: 30px;
+        width:130px;
+    }
+    header input{
+        padding: 8px 300px;
+        font-size: 25px;
+    }
+    header button{
+        padding: 10px 20px;
+    }
+
+    
+    header .fas{
+        font-size: 25px;
+    }
+    header .last{
+        margin-right: 30px;
+    }
+    header .fa-microphone{
+        margin-left: 20px;
+    }
+    header .fa-bars{
+        margin-right: 20px;
+    }
+    ::placeholder{
+        font-size: 25px;
+        text-align: left;
+    }
+
+  
+
+
+    #main{
+        display: flex;
+
+        gap: 50px;
+        margin-top: 20px;
+        padding-left: 20px;
+    }
+    #recommendation{
+        flex: 2;
+    }
+    #video_details{
+        flex: 4;
+        
+    }
+    .subrecommnd{
+        display: flex;
+        margin-bottom: 10px;
+    }
+    h3{
+        margin-top: 0px;
+    }
+    .info{
+        margin-left: 10px;
+    }
+    /* #main>div{
+         border: 1px solid red; 
+    } */
+    .commentbox{
+        display: flex;
+    }
+    .infodiv{
+        margin-left: 20px;
+    }
+    .commentbox img{
+        border-radius: 50%;
+    }
