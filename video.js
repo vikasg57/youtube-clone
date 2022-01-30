@@ -1,4 +1,15 @@
-    let appendvideo=()=>{
+  
+
+ import {header} from "./components/header.js" 
+
+ let head=document.querySelector("#header")
+
+ head.innerHTML=header()
+  
+
+
+  
+  let appendvideo=()=>{
           let { videoId, snippet, snippet: { title }, snippet: { channelTitle }, snippet: { description }  } = JSON.parse(localStorage.getItem('clicked_video'))
         console.log(snippet)
         console.log(channelTitle)
@@ -90,10 +101,6 @@
 
                 playrecommend(videoId,iframe)
 
-            
-              
-
-
 
             }
 
@@ -137,14 +144,8 @@
 
                         imgdiv.append(img)
                         infodiv.append(name,comment)
-
                         div.append(imgdiv,infodiv)
-
                         document.querySelector('#commentdiv').append(div)
-
-
-
-
 
 
         })

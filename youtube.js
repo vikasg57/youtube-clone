@@ -1,7 +1,19 @@
 
+ import {header} from "./components/header.js" 
+
+ let head=document.querySelector("#header")
+
+ head.innerHTML=header()
+  
+
      const url = ""
 
-        const key = ""
+    const key = ""
+
+    let searchbutton=document.querySelector("#searchbutton")
+
+    searchbutton.addEventListener('click',searchVideo)
+
 
 const results =document.querySelector('#search_results')
 

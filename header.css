@@ -1,0 +1,44 @@
+   header>div{
+       
+        display: flex;
+        align-items: center;
+
+    }
+    header{
+        display: flex;
+        justify-content: space-between;
+        padding-left: 20px;
+    }
+
+    /* #search_results>div{
+        border: 2px solid black;
+    } */
+    #icon{
+        height: 30px;
+        width:130px;
+    }
+    header input{
+        padding: 8px 300px;
+        font-size: 25px;
+    }
+    header button{
+        padding: 10px 20px;
+    }
+
+    
+    header .fas{
+        font-size: 25px;
+    }
+    header .last{
+        margin-right: 30px;
+    }
+    header .fa-microphone{
+        margin-left: 20px;
+    }
+    header .fa-bars{
+        margin-right: 20px;
+    }
+    ::placeholder{
+        font-size: 25px;
+        text-align: left;
+    }

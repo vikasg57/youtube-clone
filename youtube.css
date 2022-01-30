@@ -1,49 +1,7 @@
   *{
         font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
-    header>div{
-        display: flex;
-        align-items: center;
-    }
-    header{
-        display: flex;
-        justify-content: space-between;
-    }
-
-    /* #search_results>div{
-        border: 2px solid black;
-    } */
-    #icon{
-        height: 30px;
-        width:130px;
-    }
-    header input{
-        padding: 8px 300px;
-        font-size: 25px;
-    }
-    header button{
-        padding: 10px 20px;
-        
-    }
-
-    
-    .fas{
-        font-size: 25px;
-    }
-    .last{
-        margin-right: 30px;
-    }
-    .fa-microphone{
-        margin-left: 20px;
-    }
-    .fa-bars{
-        margin-right: 20px;
-    }
-    ::placeholder{
-        font-size: 25px;
-        text-align: left;
-    }
-
+  
     #search_results{
     display: grid;
     grid-template-columns: repeat(4,1fr);
