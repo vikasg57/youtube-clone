@@ -6,7 +6,7 @@
  head.innerHTML=header()
   
 
-     const url = ""
+    const url = ""
 
     const key = ""
 
@@ -23,12 +23,6 @@ async function searchVideo(){
         let response = await fetch(`https://youtube.googleapis.com/youtube/v3/search?videoEmbeddable=true&part=snippet&maxResults=15&q=${video_query}&type=video&key=AIzaSyARVhX5SK0cgLd39MbemmARw0WsIGALAJk`)
         let data = await response.json()
         let video = data.items 
-        
-
-        // showcomment()
-     
-          
-    
 
         ondisplay(video) 
         
@@ -38,10 +32,8 @@ async function searchVideo(){
     }
 }
 
-        let recommendation = JSON.parse(localStorage.getItem('recommendation_results'))
-        ondisplay(recommendation)
-
-
+let recommendation = JSON.parse(localStorage.getItem('recommendation_results'))
+ondisplay(recommendation)
 
 function ondisplay(items){
   
@@ -64,32 +56,18 @@ function ondisplay(items){
         head.innerHTML=title
         let div=document.createElement('div')
 
-        // console.log(url)
-        // console.log(videoId);
-
         let data_to_send = {
             snippet,
             videoId
 
-
-
         }
-     
 
-
-
-        // let(snip)
 
         div.onclick=()=>{
             playvideo(data_to_send,items)
         }
 
- 
 
-
-        
-
-       
         div.append(thumb,head)
         results.append(div)
     });
@@ -97,30 +75,12 @@ function ondisplay(items){
 
 };
 
-        function playvideo(data,recommendation) {
+function playvideo(data,recommendation) {
 
-
-            localStorage.setItem("clicked_video",JSON.stringify(data))
-            localStorage.setItem("recommendation_results",JSON.stringify(recommendation))
-            
+localStorage.setItem("clicked_video",JSON.stringify(data))
+localStorage.setItem("recommendation_results",JSON.stringify(recommendation))
             window.location.href="video.html"
-
-
-
-
-            // results.innerHTML = null
-           
-            // // console.log("vikas")
-            // console.log(videoId)
-            // console.log(el)
-            // let iframe = document.createElement("iframe")
-            // iframe.src = `https://www.youtube.com/embed/${videoId}`
-            // iframe.height = "500"
-            // iframe.width = "700"
-            // iframe.setAttribute("allowfullscreen", "true")
-            // results.append(iframe)
-
-        }
+}
 
 
 

@@ -6,14 +6,11 @@
 
  head.innerHTML=header()
   
-
-
-  
   let appendvideo=()=>{
           let { videoId, snippet, snippet: { title }, snippet: { channelTitle }, snippet: { description }  } = JSON.parse(localStorage.getItem('clicked_video'))
-        console.log(snippet)
-        console.log(channelTitle)
-        console.log(description)
+   //     console.log(snippet)
+   //     console.log(channelTitle)
+   //     console.log(description)
         let recommendation = JSON.parse(localStorage.getItem('recommendation_results'))
         // console.log(recommendation)
 
@@ -37,16 +34,35 @@
 
 
         document.querySelector('.videobox').append(iframe,heading,channelname,des)
-        // video_div.append(heading)
-            // localStorage.removeItem("clicked_video");
+    
             showrecommendation(recommendation,iframe)
             showcomment(videoId)
 
+            channelinfo(videoId)
+
     }
+
+
+
     appendvideo()
   
 
-   
+    async function channelinfo(videoId){
+        try{
+
+            let response =await fetch(`https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&key=AIzaSyARVhX5SK0cgLd39MbemmARw0WsIGALAJk&id=${videoId}`)
+
+            let data =await response.json()
+
+            console.log(data)
+          
+            
+        }
+        catch(er){
+            console.log(er)
+        }
+    }
+
   
 
         async function showcomment(videoId) {
@@ -125,28 +141,26 @@
         items.map((el)=>{
             let{snippet: { topLevelComment:{snippet} }}=el
              let { snippet: { topLevelComment: { snippet:{textOriginal}, snippet: { authorDisplayName}, snippet: { authorProfileImageUrl} } } } = el
-             console.log(snippet)
-            console.log(textOriginal)
-            console.log(authorDisplayName)
-            console.log(authorProfileImageUrl)
+     //        console.log(snippet)
+     //       console.log(textOriginal)
+    //        console.log(authorDisplayName)
+    //        console.log(authorProfileImageUrl)
 
             let div = document.createElement('div')
-            div.setAttribute('class',"commentbox")
-               let imgdiv = document.createElement('div')
+              div.setAttribute('class',"commentbox")
+                let imgdiv = document.createElement('div')
                   let infodiv = document.createElement('div')
-                  infodiv.setAttribute('class',"infodiv")
+                   infodiv.setAttribute('class',"infodiv")
                     let img=document.createElement('img')
-                    img.src= authorProfileImageUrl
+                     img.src= authorProfileImageUrl
                       let name=document.createElement('h3')
-                      name.textContent= authorDisplayName
+                       name.textContent= authorDisplayName
                         let comment=document.createElement('p')
-                        comment.textContent= textOriginal
-
-                        imgdiv.append(img)
-                        infodiv.append(name,comment)
-                        div.append(imgdiv,infodiv)
-                        document.querySelector('#commentdiv').append(div)
-
+                         comment.textContent= textOriginal
+                          imgdiv.append(img)
+                           infodiv.append(name,comment)
+                            div.append(imgdiv,infodiv)
+                             document.querySelector('#commentdiv').append(div)
 
         })
 
